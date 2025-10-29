@@ -5,6 +5,7 @@ import java.util.Random;
 ------------------------------------------------------------
 Exercici: Escapa de la Mansió Embruixada 🎃
 ------------------------------------------------------------
+mbr maria fet
 Descripció:
 Crea un programa en Java que simule un joc de Halloween en la consola.
 El jugador està atrapat en una mansió embruixada i ha de trobar l’eixida
