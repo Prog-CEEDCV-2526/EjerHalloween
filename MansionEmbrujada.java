@@ -1,61 +1,79 @@
-
 import java.util.Scanner;
 import java.util.Random;
 
 /*
 ------------------------------------------------------------
-Ejercicio: Escapa de la Mansión Embrujada 🎃
+Exercici: Escapa de la Mansió Embruixada 🎃
 ------------------------------------------------------------
-Descripción:
-Crea un programa en Java que simule un juego de Halloween en la consola.
-El jugador está atrapado en una mansión embrujada y debe encontrar la salida
-antes de que se agoten sus pasos.
+Descripció:
+Crea un programa en Java que simule un joc de Halloween en la consola.
+El jugador està atrapat en una mansió embruixada i ha de trobar l’eixida
+abans que s’acaben els passos.
 
-Requisitos:
-- Mostrar un mensaje inicial indicando la situación.
-- El jugador tiene 5 pasos para encontrar la salida.
-- En cada paso, debe elegir entre dos puertas: izquierda (1) o derecha (2).
-- Usar estructuras de control:
-    * if / if-else: para comprobar si la elección es correcta.
-    * while: para repetir el juego mientras queden pasos y no haya escapado.
-    * do-while: para validar que la entrada sea 1 o 2.
-- Si el jugador elige la puerta correcta, gana y escapa.
-- Si se queda sin pasos, pierde y queda atrapado en la mansión.
-
-
+Requisits:
+- Mostrar un missatge inicial indicant la situació.
+- El jugador té 5 passos per trobar l’eixida.
+- En cada pas, ha de triar entre dues portes: esquerra (1) o dreta (2).
+- Utilitzar estructures de control:
+    * if / if-else: per comprovar si l’elecció és correcta.
+    * while: per repetir el joc mentre queden passos i no haja escapat.
+    * do-while: per validar que l’entrada siga 1 o 2.
+- Si el jugador tria la porta correcta, guanya i escapa.
+- Si es queda sense passos, perd i queda atrapat en la mansió.
 ------------------------------------------------------------
 */
 public class MansionEmbrujada {
     public static void main(String[] args) {
-        //crear la variables scannerpara leer por pantalla
-        
+        // Crear la variable Scanner per llegir per pantalla
+        Scanner sc = new Scanner(System.in);
         Random rand = new Random();
 
-        // crear vble entera pasos
+        // Crear variable sencera passos
+        int passos = 5;
 
-        //crear la vble booleana encontradaSalida
-       
-        //sacar por pantalla 🎃 Bienvenido a la Mansión Embrujada 🎃
-        
-        //sacar pr pantalla "Tienes X pasos para encontrar la salida... ¡Buena suerte!")
-        
-        //Mientras que pasos sea mayor que 0 y no se haya encontrado la salida
+        // Crear la variable booleana eixidaTrobada
+        boolean eixidaTrobada = false;
 
-            //sacar por pantalla "¿Puerta izquierda (1) o derecha (2)?"
-            //crear vable para elección de usuario
+        // Mostrar per pantalla 🎃 Benvingut a la Mansió Embruixada 🎃
+        System.out.println("🎃 Benvingut a la Mansió Embruixada 🎃");
 
-            //recoger elección de usuario con la vble scanner
+        // Mostrar per pantalla "Tens X passos per trobar l’eixida... Bona sort!"
+        System.out.println("Tens " + passos + " passos per trobar l’eixida... Bona sort!");
 
-            int puertaCorrectaAlAzar = rand.nextInt(2) + 1;
+        // Mentre que passos siga major que 0 i no s’haja trobat l’eixida
+        while (passos > 0 && !eixidaTrobada) {
+            // Mostrar per pantalla "Porta esquerra (1) o dreta (2)?"
+            System.out.println("\nPorta esquerra (1) o dreta (2)?");
 
-            //si la elección es igual a puertaCorrectaAlAzar
-                //sacar por pantalla "✅ ¡Has encontrado la salida! Escapas de la mansión...") y cambiar encontradaSalida a true
-            //sino resto pasos y saco por pantalla "👻 ¡Un fantasma te asusta! Te quedan " + pasos + " pasos."
+            // Crear variable per a l’elecció de l’usuari
+            int eleccio;
 
-        
-            //si no has encontrado la salida sacar por pantalla "💀 Se acabaron los pasos... ¡La mansión te atrapa para siempre!"
-            
-        
-        
+            // Recollir elecció de l’usuari amb la variable Scanner
+            do {
+                System.out.print("Tria 1 o 2: ");
+                eleccio = sc.nextInt();
+            } while (eleccio != 1 && eleccio != 2);
+
+            int portaCorrectaAlAzar = rand.nextInt(2) + 1;
+
+            // Si l’elecció és igual a portaCorrectaAlAzar
+            if (eleccio == portaCorrectaAlAzar) {
+                // Mostrar per pantalla "✅ Has trobat l’eixida! Escapes de la mansió..."
+                System.out.println("✅ Has trobat l’eixida! Escapes de la mansió...");
+                eixidaTrobada = true;
+            } else {
+                passos--;
+                // Mostrar per pantalla "👻 Un fantasma t’espanta! Et queden " + passos + " passos."
+                System.out.println("👻 Un fantasma t’espanta! Et queden " + passos + " passos.");
+            }
+        }
+
+        // Si no has trobat l’eixida mostrar per pantalla "💀 S’han acabat els passos... La mansió t’atrapa per sempre!"
+        if (!eixidaTrobada) {
+            System.out.println("💀 S’han acabat els passos... La mansió t’atrapa per sempre!");
+        }
+
+        sc.close();
     }
 }
+``
