@@ -2,6 +2,7 @@ import java.util.Scanner;
 import java.util.Random;
 
 /*
+mbr prova
 ------------------------------------------------------------
 Exercici: Escapa de la Mansió Embruixada 🎃
 ------------------------------------------------------------
