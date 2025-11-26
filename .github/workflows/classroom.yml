@@ -3,6 +3,7 @@ name: Classroom Autograding
 on:
   push:
     branches: [ main, master ]
+  workflow_dispatch:  
 
 jobs:
   build:
