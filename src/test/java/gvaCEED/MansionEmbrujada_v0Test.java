@@ -1,4 +1,5 @@
 package gvaCEED;
+import gvaCEED.MansionEmbrujada_v0;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -13,10 +14,6 @@ import src.main.java.gvaCEED.MansionEmbrujada_v0;
 
 public class MansionEmbrujada_v0Test {
 
-    @Test
-    void testExample() {
-        assertTrue(true);
-    }
 
 
     @Test
