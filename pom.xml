@@ -30,8 +30,10 @@
                 <version>3.1.2</version>
                 <configuration>
                     <useFile>true</useFile>
+                    <redirectTestOutputToFile>true</redirectTestOutputToFile>
                     <printSummary>true</printSummary>
                     <reportFormat>brief</reportFormat>
+                    <disableXmlReport>false</disableXmlReport>
             </configuration>
             </plugin>
         </plugins>
